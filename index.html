@@ -5,60 +5,115 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tourist Guide for French Cities</title>
   <style>
+    /* === GLOBAL STYLES === */
     body {
-      font-family: Arial, sans-serif;
-      background: #f7f7f7;
-      text-align: center;
+      font-family: 'Poppins', sans-serif;
       margin: 0;
       padding: 0;
+      text-align: center;
+      color: #333;
+      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
+    /* === HEADER === */
     header {
-      background-color: #0078d7;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.65);
       color: white;
       padding: 20px 0;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(4px);
     }
 
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    /* === NAVIGATION BAR === */
     nav ul {
       list-style: none;
       padding: 0;
-      margin: 0;
+      margin: 15px 0 0 0;
       display: flex;
       justify-content: center;
-      background: #005fa3;
       flex-wrap: wrap;
     }
 
     nav li {
-      margin: 10px;
+      margin: 8px;
     }
 
     nav a {
       color: white;
       text-decoration: none;
       font-weight: bold;
-      padding: 8px 16px;
-      border-radius: 5px;
+      padding: 10px 20px;
+      border-radius: 30px;
+      background: rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
     }
 
     nav a:hover {
-      background-color: #004b82;
+      background: white;
+      color: #0078d7;
+      transform: scale(1.05);
     }
 
+    /* === MAIN CONTENT === */
     #city-info {
       margin: 30px auto;
-      max-width: 700px;
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 750px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.8s ease;
+    }
+
+    #city-info h2 {
+      color: #0078d7;
+      font-size: 1.8em;
+      margin-bottom: 10px;
+    }
+
+    #city-info p {
+      font-size: 1.1em;
+      line-height: 1.6em;
     }
 
     img {
       width: 100%;
-      border-radius: 10px;
-      margin-top: 15px;
-      height: auto;
+      border-radius: 15px;
+      margin-top: 20px;
+      transition: transform 0.5s ease, box-shadow 0.5s ease;
+    }
+
+    img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    footer {
+      margin-top: auto;
+      padding: 15px;
+      color: white;
+      font-size: 0.9em;
+      background: rgba(0, 0, 0, 0.4);
+      width: 100%;
+      letter-spacing: 0.5px;
+    }
+
+    /* === ANIMATION === */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
@@ -81,6 +136,10 @@
     <p>Click on a city above to explore beautiful destinations in France.</p>
     <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg" alt="Paris">
   </section>
+
+  <footer>
+    © 2025 Tourist Guide | Designed by You 💙
+  </footer>
 
   <script>
     const cities = {
@@ -122,4 +181,3 @@
   </script>
 </body>
 </html>
-
