@@ -3,52 +3,122 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tourist Guide — French Cities</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Tourist Guide for French Cities</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #0078d7;
+      color: white;
+      padding: 20px 0;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      background: #005fa3;
+    }
+
+    nav li {
+      margin: 10px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 5px;
+    }
+
+    nav a:hover {
+      background-color: #004b82;
+    }
+
+    #city-info {
+      margin: 30px auto;
+      max-width: 700px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    img {
+      width: 100%;
+      border-radius: 10px;
+      margin-top: 15px;
+    }
+  </style>
 </head>
 <body>
   <header>
-    <div class="logo">FG</div>
-    <div class="title">
-      <h1>Tourist Guide — French Cities</h1>
-      <p>Attractive • Responsive • Bilingual</p>
-    </div>
+    <h1>Tourist Guide for French Cities</h1>
     <nav>
-      <a href="#" data-city="Paris">Paris</a>
-      <a href="#" data-city="Lyon">Lyon</a>
-      <a href="#" data-city="Marseille">Marseille</a>
-      <a href="#" data-city="Nice">Nice</a>
-      <a href="#" data-city="Bordeaux">Bordeaux</a>
+      <ul>
+        <li><a href="#" onclick="showCity('paris')">Paris</a></li>
+        <li><a href="#" onclick="showCity('lyon')">Lyon</a></li>
+        <li><a href="#" onclick="showCity('marseille')">Marseille</a></li>
+        <li><a href="#" onclick="showCity('nice')">Nice</a></li>
+        <li><a href="#" onclick="showCity('bordeaux')">Bordeaux</a></li>
+      </ul>
     </nav>
-    <div class="lang">
-      <button>EN</button>
-      <button>FR</button>
-    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>Explore France — Cities to Fall in Love With</h2>
-      <p>Discover landmarks, food, and travel tips. Switch to French anytime!</p>
-      <div class="search">
-        <input type="text" id="searchCity" placeholder="Search a city...">
-        <button id="searchBtn">Search</button>
-      </div>
-    </section>
+  <section id="city-info">
+    <h2>Welcome!</h2>
+    <p>Click on a city above to explore beautiful destinations in France.</p>
+    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris">
+  </section>
 
-    <section class="city-info" id="cityInfo">
-      <img id="cityImage" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="City Image">
-      <h3 id="cityName">Paris</h3>
-      <p id="hotelPrice">Average hotel price: €150/night</p>
-      <p id="citySpots">Top attractions: Eiffel Tower, Louvre Museum, Notre-Dame Cathedral, Seine River Cruise</p>
-    </section>
-  </main>
+  <script>
+    const cities = {
+      paris: {
+        name: "Paris",
+        info: "Paris, the capital of France, is famous for the Eiffel Tower, Louvre Museum, and beautiful streets filled with culture.",
+        img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34"
+      },
+      lyon: {
+        name: "Lyon",
+        info: "Lyon is known for its cuisine, Roman amphitheaters, and stunning architecture.",
+        img: "https://images.unsplash.com/photo-1606041008023-472dfb5e530f"
+      },
+      marseille: {
+        name: "Marseille",
+        info: "Marseille is a port city known for its historic Old Port and Mediterranean charm.",
+        img: "https://images.unsplash.com/photo-1581349485608-946f5a8a6b76"
+      },
+      nice: {
+        name: "Nice",
+        info: "Nice lies on the French Riviera and is famous for its beaches, blue waters, and promenade.",
+        img: "https://images.unsplash.com/photo-1505731132164-cca4e5a0f66e"
+      },
+      bordeaux: {
+        name: "Bordeaux",
+        info: "Bordeaux is a city known for its wine, elegant architecture, and the Garonne River.",
+        img: "https://images.unsplash.com/photo-1505842465776-3d90f616310d"
+      }
+    };
 
-  <footer>
-    <p>© 2025 French Cities Project | Built with ❤️ by Students</p>
-  </footer>
-
-  <script src="script.js"></script>
+    function showCity(city) {
+      const cityData = cities[city];
+      document.getElementById("city-info").innerHTML = `
+        <h2>${cityData.name}</h2>
+        <p>${cityData.info}</p>
+        <img src="${cityData.img}" alt="${cityData.name}">
+      `;
+    }
+  </script>
 </body>
 </html>
+
 
