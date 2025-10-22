@@ -1,183 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tourist Guide for French Cities</title>
-  <style>
-    /* === GLOBAL STYLES === */
-    body {
-      font-family: 'Poppins', sans-serif;
-      margin: 0;
-      padding: 0;
-      text-align: center;
-      color: #333;
-      background: linear-gradient(135deg, #74ebd5 0%, #9face6 100%);
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    /* === HEADER === */
-    header {
-      width: 100%;
-      background: rgba(0, 0, 0, 0.65);
-      color: white;
-      padding: 20px 0;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-      backdrop-filter: blur(4px);
-    }
-
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    /* === NAVIGATION BAR === */
-    nav ul {
-      list-style: none;
-      padding: 0;
-      margin: 15px 0 0 0;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    nav li {
-      margin: 8px;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 10px 20px;
-      border-radius: 30px;
-      background: rgba(255, 255, 255, 0.1);
-      transition: all 0.3s ease;
-    }
-
-    nav a:hover {
-      background: white;
-      color: #0078d7;
-      transform: scale(1.05);
-    }
-
-    /* === MAIN CONTENT === */
-    #city-info {
-      margin: 30px auto;
-      max-width: 750px;
-      background: rgba(255, 255, 255, 0.95);
-      padding: 25px;
-      border-radius: 15px;
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 0.8s ease;
-    }
-
-    #city-info h2 {
-      color: #0078d7;
-      font-size: 1.8em;
-      margin-bottom: 10px;
-    }
-
-    #city-info p {
-      font-size: 1.1em;
-      line-height: 1.6em;
-    }
-
-    img {
-      width: 100%;
-      border-radius: 15px;
-      margin-top: 20px;
-      transition: transform 0.5s ease, box-shadow 0.5s ease;
-    }
-
-    img:hover {
-      transform: scale(1.03);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    }
-
-    footer {
-      margin-top: auto;
-      padding: 15px;
-      color: white;
-      font-size: 0.9em;
-      background: rgba(0, 0, 0, 0.4);
-      width: 100%;
-      letter-spacing: 0.5px;
-    }
-
-    /* === ANIMATION === */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(10px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourist Guide - Explore France</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <header>
-    <h1>Tourist Guide for French Cities</h1>
+    <h1>Tourist Guide of France</h1>
     <nav>
       <ul>
-        <li><a href="#" onclick="showCity('paris')">Paris</a></li>
-        <li><a href="#" onclick="showCity('lyon')">Lyon</a></li>
-        <li><a href="#" onclick="showCity('marseille')">Marseille</a></li>
-        <li><a href="#" onclick="showCity('nice')">Nice</a></li>
-        <li><a href="#" onclick="showCity('bordeaux')">Bordeaux</a></li>
+        <li><a href="paris.html">Paris</a></li>
+        <li><a href="lyon.html">Lyon</a></li>
+        <li><a href="marseille.html">Marseille</a></li>
+        <li><a href="nice.html">Nice</a></li>
+        <li><a href="bordeaux.html">Bordeaux</a></li>
       </ul>
     </nav>
   </header>
 
-  <section id="city-info">
-    <h2>Welcome!</h2>
-    <p>Click on a city above to explore beautiful destinations in France.</p>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg" alt="Paris">
+  <section id="home">
+    <h2>Welcome to France!</h2>
+    <p>Explore the most beautiful cities in France — discover top attractions, hotels, and cultural highlights.</p>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg" alt="Eiffel Tower">
   </section>
 
   <footer>
-    © 2025 Tourist Guide | Designed by You 💙
+    © 2025 Tourist Guide | Made by You 💙
   </footer>
-
-  <script>
-    const cities = {
-      paris: {
-        name: "Paris",
-        info: "Paris, the capital of France, is famous for the Eiffel Tower, Louvre Museum, and charming streets filled with art and culture.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg"
-      },
-      lyon: {
-        name: "Lyon",
-        info: "Lyon is known for its historical architecture, gastronomy, and the beautiful Rhône and Saône rivers.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Lyon_vue_d%27ensemble.jpg"
-      },
-      marseille: {
-        name: "Marseille",
-        info: "Marseille is a port city known for its Old Port, Notre-Dame de la Garde, and vibrant Mediterranean culture.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Vieux-Port_de_Marseille.jpg"
-      },
-      nice: {
-        name: "Nice",
-        info: "Nice is located on the French Riviera and is famous for its beaches, Promenade des Anglais, and colorful markets.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Nice_vue_generale.jpg"
-      },
-      bordeaux: {
-        name: "Bordeaux",
-        info: "Bordeaux is known for its world-class wines, elegant architecture, and the beautiful Garonne River.",
-        img: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Bordeaux_Place_de_la_Bourse.jpg"
-      }
-    };
-
-    function showCity(city) {
-      const cityData = cities[city];
-      document.getElementById("city-info").innerHTML = `
-        <h2>${cityData.name}</h2>
-        <p>${cityData.info}</p>
-        <img src="${cityData.img}" alt="${cityData.name}">
-      `;
-    }
-  </script>
 </body>
 </html>
