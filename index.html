@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tourist Guide for French Cities</title>
   <style>
     body {
@@ -26,6 +26,7 @@
       display: flex;
       justify-content: center;
       background: #005fa3;
+      flex-wrap: wrap;
     }
 
     nav li {
@@ -50,13 +51,14 @@
       background: white;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
     img {
       width: 100%;
       border-radius: 10px;
       margin-top: 15px;
+      height: auto;
     }
   </style>
 </head>
@@ -77,35 +79,35 @@
   <section id="city-info">
     <h2>Welcome!</h2>
     <p>Click on a city above to explore beautiful destinations in France.</p>
-    <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34" alt="Paris">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg" alt="Paris">
   </section>
 
   <script>
     const cities = {
       paris: {
         name: "Paris",
-        info: "Paris, the capital of France, is famous for the Eiffel Tower, Louvre Museum, and beautiful streets filled with culture.",
-        img: "https://images.unsplash.com/photo-1502602898657-3e91760cbb34"
+        info: "Paris, the capital of France, is famous for the Eiffel Tower, Louvre Museum, and charming streets filled with art and culture.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg"
       },
       lyon: {
         name: "Lyon",
-        info: "Lyon is known for its cuisine, Roman amphitheaters, and stunning architecture.",
-        img: "https://images.unsplash.com/photo-1606041008023-472dfb5e530f"
+        info: "Lyon is known for its historical architecture, gastronomy, and the beautiful Rhône and Saône rivers.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/4/4a/Lyon_vue_d%27ensemble.jpg"
       },
       marseille: {
         name: "Marseille",
-        info: "Marseille is a port city known for its historic Old Port and Mediterranean charm.",
-        img: "https://images.unsplash.com/photo-1581349485608-946f5a8a6b76"
+        info: "Marseille is a port city known for its Old Port, Notre-Dame de la Garde, and vibrant Mediterranean culture.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/9/9c/Vieux-Port_de_Marseille.jpg"
       },
       nice: {
         name: "Nice",
-        info: "Nice lies on the French Riviera and is famous for its beaches, blue waters, and promenade.",
-        img: "https://images.unsplash.com/photo-1505731132164-cca4e5a0f66e"
+        info: "Nice is located on the French Riviera and is famous for its beaches, Promenade des Anglais, and colorful markets.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/9/93/Nice_vue_generale.jpg"
       },
       bordeaux: {
         name: "Bordeaux",
-        info: "Bordeaux is a city known for its wine, elegant architecture, and the Garonne River.",
-        img: "https://images.unsplash.com/photo-1505842465776-3d90f616310d"
+        info: "Bordeaux is known for its world-class wines, elegant architecture, and the beautiful Garonne River.",
+        img: "https://upload.wikimedia.org/wikipedia/commons/4/4c/Bordeaux_Place_de_la_Bourse.jpg"
       }
     };
 
@@ -120,5 +122,4 @@
   </script>
 </body>
 </html>
-
 
