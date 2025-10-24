@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plan Your Trip - France Tourist Guide</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1 id="title">Plan Your Trip 🧳</h1>
+    <p id="subtitle">Get ready to explore France like a local!</p>
+  </header>
+
+  <nav>
+    <a href="index.html" id="nav-home">Home</a>
+    <a href="about.html" id="nav-about">About France</a>
+    <a href="map.html" id="nav-map">Map</a>
+    <a href="gallery.html" id="nav-gallery">Gallery</a>
+    <a href="trip.html" id="nav-trip">Plan Your Trip</a>
+    <button id="lang-btn" class="toggle-btn">🇫🇷 Français</button>
+    <button id="dark-btn" class="toggle-btn">🌙 Dark Mode</button>
+  </nav>
+
+  <section>
+    <h2 id="trip-title">Travel Tips</h2>
+    <ul id="trip-list">
+      <li>📅 Best time to visit: April to June or September to October</li>
+      <li>🚆 Use France’s fast trains (TGV) for easy travel</li>
+      <li>💬 Learn a few basic French phrases for a better experience</li>
+      <li>💶 Always keep some Euros handy for local shops</li>
+      <li>📱 Use Google Maps or Citymapper for navigation</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Tourist Guide for France | Trip Planner</p>
+  </footer>
+
+  <script>
+    const darkBtn = document.getElementById('dark-btn');
+    darkBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      darkBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+
+    const langBtn = document.getElementById('lang-btn');
+    let french = false;
+
+    langBtn.addEventListener('click', () => {
+      french = !french;
+      if (french) {
+        langBtn.textContent = '🇬🇧 English';
+        document.getElementById('title').textContent = 'Planifiez votre voyage 🧳';
+        document.getElementById('subtitle').textContent = 'Préparez-vous à explorer la France comme un local !';
+        document.getElementById('trip-title').textContent = 'Conseils de voyage';
+        document.getElementById('trip-list').innerHTML = `
+          <li>📅 Meilleure période : avril à juin ou septembre à octobre</li>
+          <li>🚆 Utilisez les trains rapides (TGV) pour voyager facilement</li>
+          <li>💬 Apprenez quelques mots de français pour une meilleure expérience</li>
+          <li>💶 Gardez toujours des euros pour les petites boutiques</li>
+          <li>📱 Utilisez Google Maps ou Citymapper pour vous déplacer</li>
+        `;
+        document.getElementById('nav-home').textContent = 'Accueil';
+        document.getElementById('nav-about').textContent = 'À propos';
+        document.getElementById('nav-map').textContent = 'Carte';
+        document.getElementById('nav-gallery').textContent = 'Galerie';
+        document.getElementById('nav-trip').textContent = 'Voyage';
+      } else {
+        langBtn.textContent = '🇫🇷 Français';
+        document.getElementById('title').textContent = 'Plan Your Trip 🧳';
+        document.getElementById('subtitle').textContent = 'Get ready to explore France like a local!';
+        document.getElementById('trip-title').textContent = 'Travel Tips';
+        document.getElementById('trip-list').innerHTML = `
+          <li>📅 Best time to visit: April to June or September to October</li>
+          <li>🚆 Use France’s fast trains (TGV) for easy travel</li>
+          <li>💬 Learn a few basic French phrases for a better experience</li>
+          <li>💶 Always keep some Euros handy for local shops</li>
+          <li>📱 Use Google Maps or Citymapper for navigation</li>
+        `;
+        document.getElementById('nav-home').textContent = 'Home';
+        document.getElementById('nav-about').textContent = 'About France';
+        document.getElementById('nav-map').textContent = 'Map';
+        document.getElementById('nav-gallery').textContent = 'Gallery';
+        document.getElementById('nav-trip').textContent = 'Plan Your Trip';
+      }
+    });
+  </script>
+
+</body>
+</html>

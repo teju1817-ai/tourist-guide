@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tourist Guide to France</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1 id="title">Bienvenue en France 🇫🇷</h1>
+    <p id="subtitle">Your Ultimate Tourist Guide</p>
+  </header>
+
+  <nav>
+    <a href="index.html" id="nav-home">Home</a>
+    <a href="about.html" id="nav-about">About France</a>
+    <a href="map.html" id="nav-map">Map</a>
+    <a href="gallery.html" id="nav-gallery">Gallery</a>
+    <a href="trip.html" id="nav-trip">Plan Your Trip</a>
+    <button id="lang-btn" class="toggle-btn">🇫🇷 Français</button>
+    <button id="dark-btn" class="toggle-btn">🌙 Dark Mode</button>
+  </nav>
+
+  <section id="intro">
+    <h2 id="intro-title">Welcome to France</h2>
+    <p id="intro-text">Discover the art, culture, and beauty of France — from the Eiffel Tower to the lavender fields of Provence.</p>
+  </section>
+
+  <section id="highlights">
+    <h2 id="highlight-title">Highlights</h2>
+    <ul id="highlight-list">
+      <li>🏙️ Visit world-famous landmarks</li>
+      <li>🥐 Enjoy authentic French food</li>
+      <li>🎭 Experience unique festivals</li>
+      <li>🚄 Learn how to travel like a local</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>© 2025 Tourist Guide for France | Created for School Project</p>
+  </footer>
+
+  <script>
+    // === DARK MODE ===
+    const darkBtn = document.getElementById('dark-btn');
+    darkBtn.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      darkBtn.textContent = document.body.classList.contains('dark-mode') ? '☀️ Light Mode' : '🌙 Dark Mode';
+    });
+
+    // === LANGUAGE SWITCH ===
+    const langBtn = document.getElementById('lang-btn');
+    let french = false;
+
+    langBtn.addEventListener('click', () => {
+      french = !french;
+      if (french) {
+        langBtn.textContent = '🇬🇧 English';
+        document.getElementById('title').textContent = 'Bienvenue en France 🇫🇷';
+        document.getElementById('subtitle').textContent = 'Votre guide touristique ultime';
+        document.getElementById('intro-title').textContent = 'Bienvenue en France';
+        document.getElementById('intro-text').textContent = 'Découvrez l’art, la culture et la beauté de la France — de la Tour Eiffel aux champs de lavande de Provence.';
+        document.getElementById('highlight-title').textContent = 'Points forts';
+        document.getElementById('highlight-list').innerHTML = `
+          <li>🏙️ Visitez des monuments célèbres</li>
+          <li>🥐 Dégustez la vraie cuisine française</li>
+          <li>🎭 Participez à des festivals uniques</li>
+          <li>🚄 Voyagez comme un local</li>
+        `;
+        document.getElementById('nav-home').textContent = 'Accueil';
+        document.getElementById('nav-about').textContent = 'À propos';
+        document.getElementById('nav-map').textContent = 'Carte';
+        document.getElementById('nav-gallery').textContent = 'Galerie';
+        document.getElementById('nav-trip').textContent = 'Voyage';
+      } else {
+        langBtn.textContent = '🇫🇷 Français';
+        document.getElementById('title').textContent = 'Welcome to France 🇫🇷';
+        document.getElementById('subtitle').textContent = 'Your Ultimate Tourist Guide';
+        document.getElementById('intro-title').textContent = 'Welcome to France';
+        document.getElementById('intro-text').textContent = 'Discover the art, culture, and beauty of France — from the Eiffel Tower to the lavender fields of Provence.';
+        document.getElementById('highlight-title').textContent = 'Highlights';
+        document.getElementById('highlight-list').innerHTML = `
+          <li>🏙️ Visit world-famous landmarks</li>
+          <li>🥐 Enjoy authentic French food</li>
+          <li>🎭 Experience unique festivals</li>
+          <li>🚄 Learn how to travel like a local</li>
+        `;
+        document.getElementById('nav-home').textContent = 'Home';
+        document.getElementById('nav-about').textContent = 'About France';
+        document.getElementById('nav-map').textContent = 'Map';
+        document.getElementById('nav-gallery').textContent = 'Gallery';
+        document.getElementById('nav-trip').textContent = 'Plan Your Trip';
+      }
+    });
+  </script>
+
+</body>
+</html>
